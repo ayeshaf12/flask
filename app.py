@@ -18,7 +18,8 @@ def user(name):
 #CREATED A NEW TEMPLATE AND RENDERED IT
 @app.route('/new/')
 def new_page():
-    return render_template("index.html")
+    skills_tolearn= ["Jinja2", "Databases","Python","Javascript","PowerBI", 41]
+    return render_template("index.html",skills_tolearn=skills_tolearn)
 
 @app.route('/temp/<name>')
 def temp(name):

@@ -1,46 +1,56 @@
-<h1>Hello World</h1>
+{% extends 'base.html' %}
 
-<p>This is my first webpage using flask !!</p>
-<p>Isn't this cool </p>
-<p>My name is {{first_name}} </p>
 
-<!-- Safe-This text is clean HTML - trust it and render it as-is 
- (don't escape special characters) 
- Only use | safe on content YOU CREATED AND TRUST Otherwise hackers can inject 
- malicious scripts)!-->
-<p>{{ stuff |safe }}</p>
-<!-- Striptags -->
-<p>{{stuff|striptags}}</p>
-<!-- title capitalizes first alphabet of each word -->
-<p>{{stuff1|title}}</p>
-<!--  trim -->
-<p> {{trim|trim}}</p>
+{% block content%}
 
-<!-- Running a forloop in jinja2 -->
-<h3>Skills to learn :</h3>
-{% for item in skills_tolearn %}
-    {{item}}<br/>
-{% endfor %}
-<br/><br/>
-<!-- Print using index -->
-<h3>Printing by index</h3>
-{{skills_tolearn.3}} <br/>
-<br/>
-<!-- A little math -->
-{{skills_tolearn.5+10}} <br/><br/>
 
-<!-- Forloop and if statement together-->
-<h2> Using for and if statement together : </h2>
-{% for item in skills_tolearn %}
 
-    {% if item == 41 %}
-        <p><strong>This is a number : </strong> {{item + 100 }} </p><br/>
-    {% else %}
-        {{ item }}<br/>
-    {% endif %}
+    <h1>Hello World</h1>
 
-{% endfor %}
+    <p>This is my first webpage using flask !!</p>
+    <p>Isn't this cool </p>
+    <p>My name is {{first_name}} </p>
 
-<!-- Reverse -->
- <h3>Using reverse filter :</h3> 
- {{ skills_tolearn.0|reverse }}
+    <!-- Safe-This text is clean HTML - trust it and render it as-is 
+    (don't escape special characters) 
+    Only use | safe on content YOU CREATED AND TRUST Otherwise hackers can inject 
+    malicious scripts)!-->
+    <p>{{ stuff |safe }}</p>
+    <!-- Striptags -->
+    <p>{{stuff|striptags}}</p>
+    <!-- title capitalizes first alphabet of each word -->
+    <p>{{stuff1|title}}</p>
+    <!--  trim -->
+    <p> {{trim|trim}}</p>
+
+    <!-- Running a forloop in jinja2 -->
+    <h3>Skills to learn :</h3>
+    {% for item in skills_tolearn %}
+        {{item}}<br/>
+    {% endfor %}
+    <br/><br/>
+    <!-- Print using index -->
+    <h3>Printing by index</h3>
+    {{skills_tolearn.3}} <br/>
+    <br/>
+    <!-- A little math -->
+    {{skills_tolearn.5+10}} <br/><br/>
+
+    <!-- Forloop and if statement together-->
+    <h2> Using for and if statement together : </h2>
+    {% for item in skills_tolearn %}
+
+        {% if item == 41 %}
+            <p><strong>This is a number : </strong> {{item + 100 }} </p><br/>
+        {% else %}
+            {{ item }}<br/>
+        {% endif %}
+
+    {% endfor %}
+
+    <!-- Reverse -->
+    <h3>Using reverse filter :</h3> 
+    {{ skills_tolearn.0|reverse }}
+
+
+ {% endblock %}
