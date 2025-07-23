@@ -1,7 +1,19 @@
 from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField,SubmitField
+from wtforms.validators import DataRequired
+
 
 # Create a flask instance
 app= Flask(__name__)
+
+# Create a form class 
+
+
+
+
+
+
 
 # Create a flask route(decorator)-creating URL
 # ('/') this is the endpoint of the URL - This is homepage
@@ -47,6 +59,9 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
+
+
+
 
 #TO ACTIVATE DEVELOPMENT MODE
 if __name__ == '__main__':
