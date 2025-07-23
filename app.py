@@ -13,9 +13,10 @@ def home():
 @app.route('/user/<name>')  #here name is a variable and you can change name on URL in browser
 def user(name):
      return"<p>How are you {} </p>".format(name)
+                                           
 
 
-#CREATED A NEW TEMPLATE AND RENDERED IT 
+#CREATED A NEW TEMPLATE AND RENDERED IT
 @app.route('/new/')
 def new_page():
     skills_tolearn= ["Jinja2", "Databases","Python","Javascript","PowerBI", 41]
