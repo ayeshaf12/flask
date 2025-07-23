@@ -6,13 +6,25 @@ from wtforms.validators import DataRequired
 
 # Create a flask instance
 app= Flask(__name__)
+#Create a secret key but dont push it to git bcz when git is public. There is a problem. For now leave it blank .
+app.config['SECRET_KEY'] = "NO SECRET KEY FOR NOW"
 
 # Create a form class 
+class namerForm(FlaskForm):
+    name = StringField("What's your Name?", validators=[DataRequired()])
+    submit = SubmitField("Submit")
 
+#Create a name page
+@app.route('/name', methods =['GET','POST'])
+def name():
+    name = None
+    form = namerForm()
+    if form.validate_on_submit():
+        name= form.name.data
+        form.name.data = ''
 
-
-
-
+    return render_template("name.html", name = name,form = form)
+    
 
 
 # Create a flask route(decorator)-creating URL
