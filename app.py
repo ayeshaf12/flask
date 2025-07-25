@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,flash
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField
 from wtforms.validators import DataRequired
@@ -22,6 +22,7 @@ def name():
     if form.validate_on_submit():
         name= form.name.data
         form.name.data = ''
+        flash("Form submitted successfully !!! ")
 
     return render_template("name.html", name = name,form = form)
     
@@ -55,6 +56,7 @@ def subs():
     first_name = "Castro"
     stuff="Trying to use <strong>safe stuff</strong>"
     stuff1="Trying to use filters"
+    flash("Welcome to our website !")
     trim = "Lets check    how                  trim    works"
     skills_tolearn= ["Jinja2", "Databases","Python","Javascript","PowerBI", 41]
     return render_template("index.html",first_name=first_name,  stuff=stuff, stuff1=stuff1,trim=trim,skills_tolearn=skills_tolearn)
