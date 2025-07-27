@@ -1,6 +1,6 @@
 h1{
     color: darkblue;
-    font-size:60px;
+    font-size:40px;
 }
 
 body{
@@ -11,5 +11,5 @@ body{
 #demo{
     font-style: italic;
     font-size: 20px;
-    color: black
+    color: blue;
 }
